@@ -728,9 +728,9 @@ diaspora_login(const char *host, u_short port, const char *user,
 					return (NULL);
 				}
 			}
-		} else if ((q = strstr(p, "name=\"authenticity_token\"")) !=
+		} else if ((q = strstr(p, "name=\"csrf-token\"")) !=
 		    NULL) {
-			if ((p = strstr(q, "value=")) != NULL) {
+			if ((p = strstr(q, "content=")) != NULL) {
 				while (*p != '\0' && *p != '=')
 					p++;
 				if (*p == '=')
